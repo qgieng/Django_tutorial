@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html class="login-page" lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <title>Login Page</title>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+</head>
+
+
+<body class="login-page">
+<div class="container">
+	<div class="d-flex justify-content-center h-100">
+		<div class="card">
+			<div class="card-header">
+				<h3>Login to Fabflix</h3>
+			</div>
+			<div class="card-body">
+				<form id="login_form"  method="post" action="#">
+				    <div class="login">
+				    	
+						
+					    <div class="input-group form-group">
+							<div class="input-group-prepend">
+								<span class="input-group-text"><i class="fas fa-user"></i></span>
+							</div>
+					    	<input type="text" class = "form-control" placeholder="email" name="email" required>
+					    </div>
+					    <div class="input-group form-group">
+							<div class="input-group-prepend">
+								<span class="input-group-text"><i class="fas fa-key"></i></span>
+							</div>
+					    	<input type="password" class= "form-control" placeholder="password" name="password" required>
+					    </div>
+					    
+					    <button type = submit class="btn float-right login_btn" value="login">Login</button>
+					    <br>
+					    <div id="login_error_message"></div>
+				    </div>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+
+
+<div id="login_error_message"></div>
+
+<script src='https://www.google.com/recaptcha/api.js'></script>
+<script src="login.js"></script>
+
+</body>
+
+
+</html>
