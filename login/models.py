@@ -9,4 +9,6 @@ class User(models.Model):
     password = models.CharField(max_length=64)
     def __str__(self):
         return self.user_name
+    def check_password(self, password:str):
+        return self.password == password
     

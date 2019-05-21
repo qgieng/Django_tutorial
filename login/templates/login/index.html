@@ -6,4 +6,5 @@
 		<input type="text" class="form-control" name="password" id="password" placeholder="password">
   {{ form.as_p }}
   <button type="submit">Login</button>
+  {% if message %}<p><strong>{{ message }}</strong></p>{% endif %}
 </form>
