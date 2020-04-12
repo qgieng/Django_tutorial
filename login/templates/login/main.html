@@ -1,1 +1,64 @@
-<h1>{{ message }}</h1>
+{% load static %}
+<!DOCTYPE html>
+<html class="Yelp_search" lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <title>Search Yelp API</title>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <link href="{% static 'login/css/main.css' %}" rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="column side">
+    
+    </div>
+        <div class="column middle">
+            <div class="container">
+                <br/>
+                <div class="row justify-content-center">
+                    <div class="col-12 col-md-10 col-lg-8">
+                        <form class="card card-sm" action="{%url 'login:main' %}" method="GET">
+                            <div class="card-body row no-gutters align-items-center">
+                                <div class="col-auto">
+                                    <i class="fas fa-search h4 text-body"></i>
+                                </div>
+
+                                <div class="col">
+                                        <input class="form-control form-control-lg form-control-borderless" type="search" placeholder="Search query"  value ="{{term}}" id="query" name='query'> 
+                                </div>
+                                <div class="col">
+                                    <input class="form-control form-control-lg form-control-borderless" type="search" placeholder="Search location" value="{{location}}" id="location" name='location'> 
+                                </div>  
+
+                                <div class="col-auto">
+                                    <button class="btn btn-lg btn-primary" type="submit" >Search </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        <div class="row justify-content-left">
+            {% for business in query_result %}
+                <div class = "yelp_entries">
+                    <img src =  {{business.image_url}}>
+                    <p><b>Name:  {{business.name}}</b></p>
+                    <p>Phone: {{business.phone}}
+                    <p>Address: {{business.location.address1}}</p>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    <div class="column side">
+    </div>
+</body>
+</html>

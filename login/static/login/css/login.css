@@ -1,0 +1,12 @@
+
+.login_form{
+    display:flexbox;
+    justify-content: center;
+    border-style: solid;
+    border-color: blue;
+    width:500px;
+}
+
+p{
+    padding-left:10px;
+}
